@@ -1,6 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
+/* TIRAR DÚVIDA COM PROFESSOR */
+const app = express();
+
+app.listen(27017, () => {
+    console.log('Back-end started! 🚀');
+});
+
+/* -------------------------------------------- */
+
+
 const TaskController = require('../controller/TaskController');
 
 router.post('/', TaskController.create);
@@ -13,7 +23,7 @@ router.get('/filter/late/:macadress', TaskController.late);
 router.get('/filter/today/:macadress', TaskController.today);
 router.get('/filter/week/:macadress', TaskController.week);
 router.get('/filter/month/:macadress', TaskController.month);
-router.get('/filter/year/:macadressg', TaskController.year);
+router.get('/filter/year/:macadress', TaskController.year);
 
 
 module.exports = router;
